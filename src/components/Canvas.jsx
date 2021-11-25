@@ -10,12 +10,21 @@ const Canvas = observer(() => {
 
   useEffect(() => {
     canvasState.setCanvas(canvasRef.current);
-    toolState.setTool(new Brush(canvasRef.current))
+    toolState.setTool(new Brush(canvasRef.current));
   }, []);
+
+  const mouseDownHandler = () => {
+    canvasState.pushToUndo(canvasRef.current.toDataURL());
+  };
 
   return (
     <div className="canvas">
-      <canvas ref={canvasRef} width={1000} height={800} />
+      <canvas
+        onMouseDown={() => mouseDownHandler()}
+        ref={canvasRef}
+        width={1000}
+        height={800}
+      />
     </div>
   );
 });

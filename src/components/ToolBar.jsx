@@ -40,8 +40,14 @@ const ToolBar = () => {
         type="color"
         style={{ marginLeft: 20 }}
       />
-      <button className="toolbar__btn undo"></button>
-      <button className="toolbar__btn redo"></button>
+      <button
+        className="toolbar__btn undo"
+        onClick={() => canvasState.undo()}
+      ></button>
+      <button
+        className="toolbar__btn redo"
+        onClick={() => canvasState.redo()}
+      ></button>
       <button className="toolbar__btn save"></button>
     </div>
   );
