@@ -8,7 +8,6 @@ export default class Eraser extends Brush {
   draw(x, y) {
     this.ctx.strokeStyle = "white";
     this.ctx.lineTo(x, y);
-    this.ctx.lineWidth = 30;
     this.ctx.stroke();
   }
 }
